@@ -4,11 +4,9 @@ count = 0
 
 weight.sort()
 
-for i in range(num):
-    count += weight[i] + 1
-    if(count not in weight):
+for i in range(len(weight)):
+    if weight[i] > count+1:
         break
-    else:
-        count -= 1
+    count += weight[i]
 
-print(count)
+print(count + 1)
