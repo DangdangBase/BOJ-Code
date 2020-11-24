@@ -1,0 +1,19 @@
+{
+  "name": "boj-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "g++ test.cpp; ./a.out"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DangdangBase/BOJ-Code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DangdangBase/BOJ-Code/issues"
+  },
+  "homepage": "https://github.com/DangdangBase/BOJ-Code#readme"
+}
