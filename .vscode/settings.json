@@ -5,6 +5,10 @@
         "iosfwd": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "istream": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "bitset": "cpp"
     }
 }
