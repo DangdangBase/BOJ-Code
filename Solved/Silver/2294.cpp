@@ -1,41 +1,73 @@
-#define _CRT_SECURE_NO_WARNINGS
-
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-
 
 int dp[10010];
 int coins[110];
 int N, K;
 
+// bottom-up
+// int main() {
+//     cin >> N >> K;
 
-int main() {
-	dp[0] = 0;
+// 	dp[0] = 0;
+// 	for (int i = 1; i < K + 1; i++) {
+// 		dp[i] = 10001;
+// 	}
 
-	scanf("%d%d", &N, &K);
+// 	for (int i = 0; i < N; i++) {
+//         cin >> coins[i];
+// 	}
 
-	for (int i = 1; i < K + 1; i++) {
-		dp[i] = 10001;
+
+
+// 	for (int cur_coin: coins) {
+// 		for (int i = cur_coin; i < K + 1; i++) {
+// 			dp[i] = min(dp[i], dp[i - cur_coin] + 1);
+// 		}
+// 	}
+
+
+// 	if (dp[K] == 10001) {
+// 		dp[K] = -1;
+// 	}
+
+// 	cout << dp[K];
+// }
+
+
+// top-down
+int get_coin(int a){
+	if(a < 0){
+		return 10001;
+	}
+	if(dp[a] || a==0){
+		return dp[a];
 	}
 
+	int ret = 10001;
+	for(int i=0; i<N; i++){
+		ret = min(ret, get_coin(a-coins[i])+1);
+	}
+	
+	return dp[a] = ret;
+}
 
-	for (int i = 0; i < N; i++) {
-		scanf("%d", &coins[i]);
+int main(){
+	cin >> N >> K;
+
+	for(int i=0; i<K+1; i++){
+		dp[i] = 0;
+	}
+	for(int i=0; i<N; i++){
+		cin >> coins[i];
 	}
 
-
-
-	for (int i = 0; i < N; i++) {
-		for (int j = coins[i]; j < K + 1; j++) {
-			dp[j] = min(dp[j], dp[j - coins[i]] + 1);
-		}
+	int ret = get_coin(K);
+	if(ret == 10001){
+		cout << -1;
+	} else {
+		cout << ret;
 	}
 
-
-	if (dp[K] == 10001) {
-		dp[K] = -1;
-	}
-
-	cout << dp[K];
+	return 0;
 }
