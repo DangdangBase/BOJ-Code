@@ -1,13 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <string>
-#include <sstream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    cin.sync_with_stdio(false);
+    cin.tie(0);
+    ios_base::sync_with_stdio(0);
 
     return 0;
 }

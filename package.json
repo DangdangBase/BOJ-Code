@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "g++ -std=c++17 test.cpp; ./a.out"
+    "start": "g++ -std=c++17 test.cpp && a.exe"
   },
   "repository": {
     "type": "git",
