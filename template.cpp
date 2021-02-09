@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
-#define ll long long;
+#define P pair<int, int>
+#define ll long long
 using namespace std;
 
 int main()
