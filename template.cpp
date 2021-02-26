@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define INF 987654321
 #define P pair<int, int>
 #define ll long long
 using namespace std;
