@@ -1,42 +1,33 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <algorithm>
-#include <limits.h>
+#include <bits/stdc++.h>
+#define P pair<int, int>
+#define ll long long
+#define INF 987654321
 using namespace std;
 
+int N, S;
+int arr[100010];
+int min_len = INF;
 
-int n, s;
-int seq[100000];
-int minLength=100010, curSum=0;
-
-int main() {
-	cin >> n >> s;
-	for (int i = 0; i < n; i++) {
-		scanf("%d", &seq[i]);
-	}
-
-
-	int start = 0, end = 0;
-	curSum = seq[start];
-
-	while (start < n-1) {
-		if (curSum >= s || end == n-1) {
-			curSum -= seq[start];
-			start++;
-		}
-		else {
-			end++;
-			curSum += seq[end];
-		}
-
-		if (curSum >= s) {
-			minLength = min(minLength, (end - start + 1));
-		}
-	}
-
-	if (minLength == 100010) {
-		minLength = 0;
-	}
-	cout << minLength;
-
+int main()
+{
+    cin.tie(0);
+    ios_base::sync_with_stdio(0);
+    
+    cin >> N >> S;
+    for(int i=0; i<N; i++) cin >> arr[i];
+    
+    int sum = 0, lo = 0, hi = 0;
+    
+    while(true){
+        if(sum >= S) sum -= arr[lo++];
+        else if(hi == N) break;
+        else sum += arr[hi++];
+        if(sum >= S) {
+            min_len = min(min_len, hi-lo);
+        }
+    }
+    
+    if(min_len == INF) min_len = 0;
+    cout << min_len << endl;
+    return 0;
 }
