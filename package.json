@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "g++ -std=c++17 test.cpp && a.exe"
+    "start-mac": "sh ./run.sh",
+    "start-windows": "bat ./run.bat"
   },
   "repository": {
     "type": "git",
