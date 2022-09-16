@@ -5,6 +5,6 @@ if [ -z $1 ]; then
   exit
 fi
  
-g++-11 -std=c++17 -Wall $1.cpp -o $1.out
+g++ -std=c++17 -Wall $1.cpp -o $1.out
 ./$1.out
 rm $1.out
